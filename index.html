@@ -44,8 +44,16 @@
           <blockquote>{{product.shine}}  </blockquote>
         </div>
         <div ng-show="tab.isSet(3)">
-          <h4>Reviews</h4>
-          <blockquote></blockquote>
+       <!--  Product Reviews List -->
+            <ul>
+              <h4>Reviews</h4>
+              <li ng-repeat="review in product.reviews">
+                <blockquote>
+                  <strong>{{review.stars}} Stars</strong>
+                  {{review.body}}
+                  <cite class="clearfix">by: {{review.author}}</cite>
+                </blockquote>
+              </li>
         </div>
       </section>
     </div>
