@@ -1,5 +1,5 @@
 function() {
-  var app =  angular.module('product-directives', []);
+  var app =  angular.module('store-products', []);
 app.directive('productTabs', function() {
     return {
       restrict: 'E',
