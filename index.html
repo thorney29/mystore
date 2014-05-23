@@ -4,7 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
     <script type="text/javascript" src="angular/angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+     	<script type="text/javascript" src="products.js"></script>
+<script type="text/javascript" src="app.js"></script>
+ 
   </head>
 <body class=" container list-group" ng-controller="StoreController as store">
      <body ng-controller="StoreController as store">
@@ -19,7 +21,8 @@
       <!--  Product Container  -->
       <div class="list-group-item" ng-repeat="product in store.products">
         <h3>{{product.name}} <em class="pull-right">{{product.price | currency}}</em></h3>
-
+ 		<!-- Product Description -->
+ 		<product-description></product-description>
         <!-- Image Gallery  -->
         <product-gallery></product-gallery>
 

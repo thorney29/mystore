@@ -1,21 +1,23 @@
 (function() {
-  var app = angular.module('gemStore', ['store-products']);
+  var app = angular.module('gemStore', ['product-directives']);
 
-  app.controller('StoreController', function(){
-    this.products = gems;
-  });
+  	app.controller('StoreController', ['$http', function($http){
+    	var store = this;
 
-  app.controller('ReviewController', function() {
-    this.review = {};
-    this.review.createdOn = Date.now();
+    	store.products = [];
 
-    this.addReview = function(product){
-    	product.reviews.push(this.review);
-     	this.review = {};
-    };
-});
+    	$http.get('store-products.json').success(function(data) {
+    		store.products = data;
+    	});
+ 	}]);
+  
+  	app.controller('ReviewController', function() {
+	    this.review = {};
+	    this.review.createdOn = Date.now();
 
- 
-    }
-  ];
+	    this.addReview = function(product){
+	    	product.reviews.push(this.review);
+	     	this.review = {};
+	    };
+  	});
 })();
