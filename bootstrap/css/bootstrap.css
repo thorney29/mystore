@@ -2308,6 +2308,9 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
   background-image: url("../img/glyphicons-halflings-white.png");
 }
+.nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+  background-color: orange !important;
+}
 
 .icon-glass {
   background-position: 0      0;
